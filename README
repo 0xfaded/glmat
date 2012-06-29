@@ -1,0 +1,8 @@
+This is a work in progress!!! I am releasing it early because it will
+become dependancy to my wrapping of gluTess*. It is incomplete, poorly
+documented, subject to api changes, and probably ridden with bugs.
+
+You have been warned.
+
+When this library has reached maturity, I will remove this warning.
+
