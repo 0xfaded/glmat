@@ -1,4 +1,4 @@
-package glmat
+package glmat42
 
 // a = b * a.
 func (a *Mat4) MulI(b *Mat4) *Mat4 {

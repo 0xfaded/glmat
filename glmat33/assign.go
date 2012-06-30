@@ -1,4 +1,4 @@
-package glmat
+package glmat33
 
 // Assign the first 3 elements of v to those of xyz.
 func (v *Vec4) Assign3(xyz *Vec3) *Vec4 {

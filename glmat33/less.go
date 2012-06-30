@@ -1,4 +1,4 @@
-package glmat
+package glmat33
 
 // Returns true if a.x < b.x. If a.x == b.x then return true if a.y < b.y.
 // Similarily for z and w. This measure is only really useful when sorting

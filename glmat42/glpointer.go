@@ -1,7 +1,7 @@
-package glmat
+package glmat42
 
 import (
-	gl "github.com/chsc/gogl/gogl/gl42"
+	gl "github.com/chsc/gogl/gl42"
 	"unsafe"
 )
 

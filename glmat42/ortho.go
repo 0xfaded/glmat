@@ -1,4 +1,4 @@
-package glmat
+package glmat42
 
 // Create a 4 by 4 orthogonal projection matrix.
 func Ortho4(left, right, bottom, top, nearVal, farVal float32) (m *Mat4) {

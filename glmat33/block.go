@@ -1,4 +1,4 @@
-package glmat
+package glmat33
 
 // Return a Vec3 constructed using the first 3 elements of v.
 func (v Vec4) V3() Vec3 {

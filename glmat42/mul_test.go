@@ -1,4 +1,4 @@
-package glmat
+package glmat42
 
 import (
 	"testing"

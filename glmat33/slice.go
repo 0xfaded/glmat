@@ -1,7 +1,7 @@
-package glmat
+package glmat33
 
 import (
-	"github.com/chsc/gogl/gl33"
+	gl "github.com/chsc/gogl/gl33"
 )
 
 type (
@@ -28,11 +28,11 @@ func (s Vec4S) Swap(a, b int) {
 }
 
 // Return size of array pointed to by s.Pointer().
-func (s Vec4S) Sizeiptr() gl33.Sizeiptr {
+func (s Vec4S) Sizeiptr() gl.Sizeiptr {
 	if len(s) > 0 {
-		return gl33.Sizeiptr(int(s[0].Sizei()) * len(s))
+		return gl.Sizeiptr(int(s[0].Sizei()) * len(s))
 	}
-	return gl33.Sizeiptr(0)
+	return gl.Sizeiptr(0)
 }
 
 // Returns number of vectors in the slice.
@@ -53,11 +53,11 @@ func (s Vec3S) Swap(a, b int) {
 }
 
 // Return size of array pointed to by s.Pointer().
-func (s Vec3S) Sizeiptr() gl33.Sizeiptr {
+func (s Vec3S) Sizeiptr() gl.Sizeiptr {
 	if len(s) > 0 {
-		return gl33.Sizeiptr(int(s[0].Sizei()) * len(s))
+		return gl.Sizeiptr(int(s[0].Sizei()) * len(s))
 	}
-	return gl33.Sizeiptr(0)
+	return gl.Sizeiptr(0)
 }
 
 // Returns number of vectors in the slice.
@@ -78,10 +78,10 @@ func (s Vec2S) Swap(a, b int) {
 }
 
 // Return size of array pointed to by s.Pointer().
-func (s Vec2S) Sizeiptr() gl33.Sizeiptr {
+func (s Vec2S) Sizeiptr() gl.Sizeiptr {
 	if len(s) > 0 {
-		return gl33.Sizeiptr(int(s[0].Sizei()) * len(s))
+		return gl.Sizeiptr(int(s[0].Sizei()) * len(s))
 	}
-	return gl33.Sizeiptr(0)
+	return gl.Sizeiptr(0)
 }
 

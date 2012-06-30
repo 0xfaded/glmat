@@ -1,4 +1,4 @@
-package glmat
+package glmat33
 
 // a + b.
 func (a Vec4) Add(b *Vec4) (sum Vec4) {

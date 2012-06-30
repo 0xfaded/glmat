@@ -1,4 +1,4 @@
-package glmat
+package glmat33
 
 import (
 	gl "github.com/chsc/gogl/gl33"

@@ -1,4 +1,4 @@
-package glmat
+package glmat33
 
 func Identity4() (m *Mat4) {
 	m = (*Mat4)(&[16]float32{1.0, 0.0, 0.0, 0.0,

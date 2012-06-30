@@ -1,4 +1,4 @@
-package glmat
+package glmat42
 
 func Translation4(x, y, z float32) (m *Mat4) {
 	m = new(Mat4)

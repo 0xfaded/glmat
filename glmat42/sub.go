@@ -1,4 +1,4 @@
-package glmat
+package glmat42
 
 // a - b.
 func (a Vec4) Sub(b *Vec4) (difference Vec4) {

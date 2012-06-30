@@ -1,4 +1,4 @@
-package glmat
+package glmat33
 
 // lambda * v.
 func (v Vec4) Scaled(lambda float32) (scaled Vec4) {
