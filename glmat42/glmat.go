@@ -8,6 +8,13 @@ type Vec4 [4]float64
 type Vec3 [3]float64
 type Vec2 [2]float64
 
+// Float32 types are not fully supported. They can be cast from float64 types.
+type Mat4f [16]float32
+
+type Vec4f [4]float32
+type Vec3f [3]float32
+type Vec2f [2]float32
+
 func (m *Mat4) String() (s string) {
 	s = fmt.Sprintf("[%4g %4g %4g %4g]\n" +
 	                "[%4g %4g %4g %4g]\n" +
