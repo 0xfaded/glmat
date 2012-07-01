@@ -27,3 +27,23 @@ func (v *Vec2) Sizei() (sizeof gl.Sizei) {
 	return sizeof
 }
 
+func (mf *Mat4f) Sizei() (sizeof gl.Sizei) {
+	sizeof = gl.Sizei(unsafe.Sizeof(*mf))
+	return sizeof
+}
+
+func (vf *Vec4f) Sizei() (sizeof gl.Sizei) {
+	sizeof = gl.Sizei(unsafe.Sizeof(*vf))
+	return sizeof
+}
+
+func (vf *Vec3f) Sizei() (sizeof gl.Sizei) {
+	sizeof = gl.Sizei(unsafe.Sizeof(*vf))
+	return sizeof
+}
+
+func (vf *Vec2f) Sizei() (sizeof gl.Sizei) {
+	sizeof = gl.Sizei(unsafe.Sizeof(*vf))
+	return sizeof
+}
+
