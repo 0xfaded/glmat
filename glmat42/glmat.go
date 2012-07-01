@@ -2,11 +2,11 @@ package glmat42
 
 import "fmt"
 
-type Mat4 [16]float32
+type Mat4 [16]float64
 
-type Vec4 [4]float32
-type Vec3 [3]float32
-type Vec2 [2]float32
+type Vec4 [4]float64
+type Vec3 [3]float64
+type Vec2 [2]float64
 
 func (m *Mat4) String() (s string) {
 	s = fmt.Sprintf("[%4g %4g %4g %4g]\n" +

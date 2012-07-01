@@ -1,6 +1,6 @@
 package glmat42
 
-func Translation4(x, y, z float32) (m *Mat4) {
+func Translation4(x, y, z float64) (m *Mat4) {
 	m = new(Mat4)
 
 	m[ 0] = 1; m[ 1] = 0; m[ 2] = 0; m[ 3] = 0;
@@ -11,7 +11,7 @@ func Translation4(x, y, z float32) (m *Mat4) {
 	return m
 }
 
-func (m *Mat4) Translate(x, y, z float32) *Mat4 {
+func (m *Mat4) Translate(x, y, z float64) *Mat4 {
 	m[12] += x * m[15]
 	m[13] += y * m[15]
 	m[14] += z * m[15]

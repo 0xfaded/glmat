@@ -24,7 +24,7 @@ func (m *Mat4) Inversed() (inv *Mat4) {
 
 	det := a0*b5 - a1*b4 + a2*b3 + a3*b2 - a4*b1 + a5*b0
 	if det == 0 {
-		errStr := fmt.Sprintf("Matrix (%v) is non invertable", (*[16]float32)(m))
+		errStr := fmt.Sprintf("Matrix (%v) is non invertable", (*[16]float64)(m))
 		panic(errors.New(errStr))
 	}
 
@@ -74,7 +74,7 @@ func (m *Mat4) Inverse() (err error) {
 
 	det := a0*b5 - a1*b4 + a2*b3 + a3*b2 - a4*b1 + a5*b0
 	if det == 0 {
-		errStr := fmt.Sprintf("Matrix (%v) is non invertable", (*[16]float32)(m))
+		errStr := fmt.Sprintf("Matrix (%v) is non invertable", (*[16]float64)(m))
 		return errors.New(errStr)
 	}
 
