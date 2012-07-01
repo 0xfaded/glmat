@@ -48,3 +48,25 @@ func (v *Vec2) DoubleP() (pointer *gl.Double) {
 	pointer = (*gl.Double)(unsafe.Pointer(v))
 	return pointer
 }
+
+// *gl.Float casts
+
+func (mf *Mat4f) FloatP() (pointer *gl.Float) {
+	pointer = (*gl.Float)(unsafe.Pointer(mf))
+	return pointer
+}
+
+func (vf *Vec4f) FloatP() (pointer *gl.Float) {
+	pointer = (*gl.Float)(unsafe.Pointer(vf))
+	return pointer
+}
+
+func (vf *Vec3f) FloatP() (pointer *gl.Float) {
+	pointer = (*gl.Float)(unsafe.Pointer(vf))
+	return pointer
+}
+
+func (vf *Vec2f) FloatP() (pointer *gl.Float) {
+	pointer = (*gl.Float)(unsafe.Pointer(vf))
+	return pointer
+}
