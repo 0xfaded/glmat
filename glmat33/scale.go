@@ -1,6 +1,15 @@
 package glmat33
 
 // lambda * v.
+func (m *Mat4) Scaled(lambda float64) (scaled *Mat4) {
+	scaled = new(Mat4)
+	for i := range m {
+		scaled[i] = lambda * m[i]
+	}
+	return scaled
+}
+
+// lambda * v.
 func (v Vec4) Scaled(lambda float64) (scaled Vec4) {
 	scaled = v
 	scaled.Scale(lambda)
@@ -19,6 +28,14 @@ func (v Vec2) Scaled(lambda float64) (scaled Vec2) {
 	scaled = v
 	scaled.Scale(lambda)
 	return scaled
+}
+
+// m *= lambda.
+func (m *Mat4) Scale(lambda float64) *Mat4 {
+	for i := range m {
+		m[i] *= lambda
+	}
+	return m
 }
 
 // v *= lambda.
