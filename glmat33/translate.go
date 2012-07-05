@@ -19,3 +19,15 @@ func (m *Mat4) Translate(x, y, z float64) *Mat4 {
 	return m
 }
 
+func (m *Mat4) Translated(x, y, z float64) (translated *Mat4) {
+
+	translated = new(Mat4)
+	*translated = *m
+
+	translated[12] += x * translated[15]
+	translated[13] += y * translated[15]
+	translated[14] += z * translated[15]
+
+	return translated
+}
+

@@ -42,3 +42,9 @@ func (m *Mat4) Rotate(angle, x, y, z float64) {
 	m.MulI(rot)
 }
 
+func (m *Mat4) Rotated(angle, x, y, z float64) *Mat4 {
+	rot := Rotation4(angle, x, y, z)
+	return m.MulM(rot)
+}
+
+
