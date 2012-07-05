@@ -12,22 +12,17 @@ func Translation4(x, y, z float64) (m *Mat4) {
 }
 
 func (m *Mat4) Translate(x, y, z float64) *Mat4 {
-	m[12] += x * m[15]
-	m[13] += y * m[15]
-	m[14] += z * m[15]
+	m[12] += m[0]*x + m[4]*y + m[ 8]*z
+	m[13] += m[1]*x + m[5]*y + m[ 9]*z
+	m[14] += m[2]*x + m[6]*y + m[10]*z
 
 	return m
 }
 
-func (m *Mat4) Translated(x, y, z float64) (translated *Mat4) {
-
-	translated = new(Mat4)
-	*translated = *m
-
-	translated[12] += x * translated[15]
-	translated[13] += y * translated[15]
-	translated[14] += z * translated[15]
-
-	return translated
+func (m *Mat4) Translated(x, y, z float64) (t *Mat4) {
+	t = new(Mat4)
+	*t = *m
+	t.Translate(x, y, z)
+	return t
 }
 
