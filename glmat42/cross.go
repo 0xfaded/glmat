@@ -10,7 +10,7 @@ func (a Vec3) Cross(b *Vec3) (cross Vec3) {
 }
 
 // a x b.
-func (a Vec2) Cross(b *Vec2) (cross float32) {
+func (a Vec2) Cross(b *Vec2) (cross float64) {
 	return a[0] * b[1] - a[1] * b[0]
 }
 
