@@ -15,6 +15,11 @@ func (q Quat) Axis() (v Vec3) {
 	return v
 }
 
+func (q Quat) ScaleAngle(lambda float64) Quat {
+	angle := q.Angle() * lambda
+	return AngleAxisQ(angle, q.Axis())
+}
+
 func (q Quat) Mat4() (m *Mat4) {
 	m = new(Mat4)
 	m[ 0] = q[0]*q[0] + q[1]*q[1] - q[2]*q[2] - q[3]*q[3]
