@@ -9,9 +9,10 @@ func (q Quat) Angle() float64 {
 }
 
 func (q Quat) Axis() (v Vec3) {
-	v[0] = q[1]
-	v[1] = q[2]
-	v[2] = q[3]
+	s := 1/math.Sin(q.Angle())
+	v[0] = q[1]*s
+	v[1] = q[2]*s
+	v[2] = q[3]*s
 	return v
 }
 

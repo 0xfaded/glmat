@@ -56,13 +56,8 @@ func (m *Mat4) AngleAxis(angle float64, u Vec3) *Mat4 {
 	return m
 }
 
-func (q *Quat) AngleAxisQ(angle float64, axis Vec3) *Quat {
+func (q *Quat) AngleAxis(angle float64, axis Vec3) *Quat {
 	*q = AngleAxisQ(angle, axis)
-	return q
-}
-
-func (q *Quat) AxisQ(axis Vec3) *Quat {
-	*q = AxisQ(axis)
 	return q
 }
 
