@@ -10,6 +10,24 @@ func AngleAxis4(angle float64, axis Vec3) (m *Mat4) {
 	return m
 }
 
+func AngleAxisQ(angle float64, axis Vec3) (q Quat) {
+	s := math.Sin(angle)
+	q[0] = math.Cos(angle)
+	q[1] = s * axis[0]
+	q[2] = s * axis[1]
+	q[3] = s * axis[2]
+	return q
+}
+
+// Angle is zero
+func AxisQ(axis Vec3) (q Quat) {
+	q[0] = 0
+	q[1] = axis[0]
+	q[2] = axis[1]
+	q[3] = axis[2]
+	return q
+}
+
 func (m *Mat4) AngleAxis(angle float64, u Vec3) *Mat4 {
 	c := math.Cos(angle)
 	s := math.Sin(angle)
@@ -36,5 +54,15 @@ func (m *Mat4) AngleAxis(angle float64, u Vec3) *Mat4 {
 	m[15] = 1
 
 	return m
+}
+
+func (q *Quat) AngleAxisQ(angle float64, axis Vec3) *Quat {
+	*q = AngleAxisQ(angle, axis)
+	return q
+}
+
+func (q *Quat) AxisQ(axis Vec3) *Quat {
+	*q = AxisQ(axis)
+	return q
 }
 

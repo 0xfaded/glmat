@@ -106,3 +106,17 @@ func (m *Mat4) Inverse() (err error) {
 	return nil
 }
 
+func (q Quat) Inversed() (i Quat) {
+	i[0] = q[0]
+	i[1] = -q[1]
+	i[2] = -q[2]
+	i[3] = -q[3]
+	return i
+}
+
+func (q *Quat) Inverse() *Quat {
+	q[1] = -q[1]
+	q[2] = -q[2]
+	q[3] = -q[3]
+	return q
+}

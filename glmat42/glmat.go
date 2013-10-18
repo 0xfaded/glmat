@@ -8,6 +8,8 @@ type Vec4 [4]float64
 type Vec3 [3]float64
 type Vec2 [2]float64
 
+type Quat [4]float64
+
 // Float32 types are not fully supported. They can be cast from float64 types.
 type Mat4f [16]float32
 
@@ -50,3 +52,9 @@ func (v *Vec2) String() (s string) {
 	                v[0], v[1])
 	return s
 }
+
+func (q Quat) String() (s string) {
+	s = fmt.Sprintf("[%4g (%4gi %4gj %4gk)]", q[0], q[1], q[2], q[3])
+	return s
+}
+
