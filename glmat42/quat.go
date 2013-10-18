@@ -8,7 +8,8 @@ func (q Quat) Angle() float64 {
 	return math.Acos(q[0])
 }
 
-func (q Quat) Axis() (v Vec3) {
+// Requires q to be a unit quaternian and fails silently if q[0] == 1
+func (q Quat) unitAxis() (v Vec3) {
 	s := 1/math.Sin(q.Angle())
 	v[0] = q[1]*s
 	v[1] = q[2]*s
@@ -17,8 +18,11 @@ func (q Quat) Axis() (v Vec3) {
 }
 
 func (q Quat) ScaleAngle(lambda float64) Quat {
+	if q[0] > 1 - 1e-8 {
+		return q
+	}
 	angle := q.Angle() * lambda
-	return AngleAxisQ(angle, q.Axis())
+	return AngleAxisQ(angle, q.unitAxis())
 }
 
 func (q Quat) Mat4() (m *Mat4) {

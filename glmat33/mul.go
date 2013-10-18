@@ -85,5 +85,5 @@ func (a *Quat) MulI(b Quat) *Quat {
 
 // Equivalent to rotating b, c = a * b
 func (a Quat) MulV3(b Vec3) (c Vec3) {
-	return a.Mul(AxisQ(b)).Mul(a.Inversed()).Axis()
+	return a.Mul(AxisQ(b)).Mul(a.Inversed()).unitAxis()
 }
