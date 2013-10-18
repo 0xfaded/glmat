@@ -77,6 +77,12 @@ func (a Quat) Mul(b Quat) (c Quat) {
 	return c
 }
 
+// Hamilton Product a x= b
+func (a *Quat) MulI(b Quat) *Quat {
+	*a = a.Mul(b)
+	return a
+}
+
 // Equivalent to rotating b, c = a * b
 func (a Quat) MulV3(b Vec3) (c Vec3) {
 	return a.Mul(AxisQ(b)).Mul(a.Inversed()).Axis()
