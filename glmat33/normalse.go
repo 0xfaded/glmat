@@ -4,7 +4,7 @@ import "math"
 
 // Normalise the Vec4 v.
 func (v *Vec4) Normalise() *Vec4 {
-	h := math.Sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2] + v[3]*v[3])
+	h := v.Norm()
 	if h == 0 {
 		v[0] = math.NaN()
 		v[1] = math.NaN()
@@ -32,7 +32,7 @@ func (v Vec4) Normalised() (normalised Vec4) {
 
 // Normalise the Vec3 v.
 func (v *Vec3) Normalise() *Vec3 {
-	h := math.Sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2])
+	h := v.Norm()
 	if h == 0 {
 		v[0] = math.NaN()
 		v[1] = math.NaN()
@@ -58,7 +58,7 @@ func (v Vec3) Normalised() (normalised Vec3) {
 
 // Normalise the Vec2 v.
 func (v *Vec2) Normalise() *Vec2 {
-	h := math.Sqrt(v[0]*v[0] + v[1]*v[1])
+	h := v.Norm()
 	if h == 0 {
 		v[0] = math.NaN()
 		v[1] = math.NaN()
@@ -80,4 +80,18 @@ func (v Vec2) Normalised() (normalised Vec2) {
 	return normalised
 }
 
+// |v|
+func (v Vec4) Norm() float64 {
+	return math.Sqrt(v.Dot(&v))
+}
+
+// |v|
+func (v Vec3) Norm() float64 {
+	return math.Sqrt(v.Dot(&v))
+}
+
+// |v|
+func (v Vec2) Norm() float64 {
+	return math.Sqrt(v.Dot(&v))
+}
 
